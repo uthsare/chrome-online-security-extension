@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "HTTP/HTTPS Checker",
+    "version": "1.0",
+    "description": "Check if a site is using HTTP or HTTPS.",
+    "permissions": [
+      "tabs"
+    ],
+    "action": {
+      "default_popup": "popup.html"}
+     
+  }
