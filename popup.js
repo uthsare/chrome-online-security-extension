@@ -15,3 +15,19 @@ chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
         statusElement.style.color = 'orange';
     }
 });
+
+function displayActivities(activities) {
+    const activitiesDiv = document.getElementById('activities');
+    activitiesDiv.innerHTML = '';
+    activities.forEach(activity => {
+        const div = document.createElement('div');
+        div.className = 'activity';
+        div.textContent = `Visited ${activity.url} on ${activity.timestamp}`;
+        activitiesDiv.appendChild(div);
+    });
+}
+
+// Load existing activities on popup open
+chrome.storage.local.get({ activities: [] }, (result) => {
+    displayActivities(result.activities);
+});

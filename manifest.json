@@ -1,11 +1,17 @@
 {
     "manifest_version": 3,
-    "name": "HTTP/HTTPS Checker",
-    "version": "1.0",
-    "description": "Check if a site is using HTTP or HTTPS.",
+    "name": "HTTP/HTTPS Checker + User Activity Monitor",
+    "version": "1.0.1",
+    "description": "Check if a site is using HTTP or HTTPS. Monitors user activities for security threats",
     "permissions": [
-      "tabs"
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs"
     ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "action": {
       "default_popup": "popup.html"}
      
